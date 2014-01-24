@@ -223,7 +223,7 @@ return{
   }
 }();
 
-$('.welcome-page').hide();
-// GAME.app.welcome();
-GAME.app.startGame();
+// $('.welcome-page').hide();
+GAME.app.welcome();
+// GAME.app.startGame();
 

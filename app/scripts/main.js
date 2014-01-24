@@ -22,6 +22,7 @@ GAME.app = function(){
   intervals = [],
   welcomePage = $('.welcome-page'),
   startpage = $('.start-page');
+
   var gameInit = function(){
     var canvas = document.getElementById("game-canvas");
     canvas.width = cWidth;
@@ -41,6 +42,7 @@ GAME.app = function(){
   'https://cdn1.iconfinder.com/data/icons/CrystalClear/32x32/apps/icons.png',
   'https://cdn1.iconfinder.com/data/icons/fatcow/32/candy_cane.png'
   ];
+
   var GameItem = function(){
     this.item = new Image();
     this.item.src = gameItemsResource[ getRandomInt(gameItemsResource.length) ];
@@ -56,49 +58,92 @@ GAME.app = function(){
     this.score = 0;
     this.timer = 30;
   };
-  var gameInfo = new GameInfo();
-  var timmer = function(){
-    gameInfo.timer--;
-    if(gameInfo.timer < 0){
-      alert("   You have Scored:"+ gameInfo.score +"\n   Thank you for playing.");
-      clearInterval(intervals['timer']);
-      clearInterval(intervals['gameItems']);
-      clearInterval(intervals['gameCatcher']);
-    }
+  var GameCatcherItem = function(){
+    this.item = new Image();
+    this.item.src = "https://cdn1.iconfinder.com/data/icons/adidas/128/Shoebox_512x512.png";
+    this.item.src2 = "https://cdn1.iconfinder.com/data/icons/windows-8-metro-style/128/tool_box.png";
+    this.x = cWidth / 2;
+    this.y = cHeight - 100;
+    this.gamma = 0;
   };
 
-
-  var gameItems = function(){
-    this.objects = [];
-    this.imgBg = new Image();
-    this.imgBg.src = "http://wallpoper.com/images/00/42/22/95/shapes-gradient_00422295.jpg";
-    var obj;
-    this.drawBackground = function(){
-      ctx.drawImage(imgBg, 0, 0);
-    };
-    this.drawGameInfo = function(){
-      /* update the score */
-      ctx.font="20px Georgia";
-      ctx.fillText("Score",10,20);
-      ctx.fillText(gameInfo.score ,25,40);
-
-      ctx.fillText("Timer", cWidth - 60, 20);
-      ctx.fillText(gameInfo.timer , cWidth - 45, 40);
+  var gameCatcherHandler = function(){
+    /* device orientation event handler */
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener('deviceorientation', function(event){
+        catcher.gamma = event.gamma;
+      }, false);
     }
-    this.draw = function(){
-      this.drawBackground();
-      this.drawGameInfo();
-      for(var i = 0; i < numberOfItems; i++){
-        ctx.drawImage(objects[i].item, objects[i].x, objects[i].y);
-        objects[i].y += objects[i].speed;
-        /* make it reflow from top when it goes out of view or its caught by the catcher */
-        if (objects[i].y > cHeight || objects[i].caught) {
-          /* Calculate the Score */
-          if(objects[i].caught){
-            gameInfo.score += 10;
-          }else{
-            gameInfo.score -= 5;
-          }
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener('orientationchange', function(){
+        if(window.orientation == 90){
+          alert(" Landscape orientation not supported right now, Sorry !")
+        }
+      }, false);
+    }
+  // intervals['gameCatcher'] = setInterval(this.draw, 36);
+
+};
+var catcher = new GameCatcherItem();
+gameCatcherHandler();
+var gameInfo = new GameInfo();
+var timmer = function(){
+  gameInfo.timer--;
+  if(gameInfo.timer < 0){
+    alert("   You have Scored:"+ gameInfo.score +"\n   Thank you for playing.");
+    clearInterval(intervals['timer']);
+    clearInterval(intervals['gameItems']);
+    clearInterval(intervals['gameCatcher']);
+  }
+};
+
+var gameItems = function(){
+  this.objects = [];
+  this.imgBg = new Image();
+  this.imgBg.src = "http://wallpoper.com/images/00/42/22/95/shapes-gradient_00422295.jpg";
+  var obj;
+  this.drawBackground = function(){
+    ctx.drawImage(imgBg, 0, 0);
+  };
+  this.drawGameInfo = function(){
+    /* update the score */
+    ctx.font="20px Georgia";
+    ctx.fillText("Score",10,20);
+    ctx.fillText(gameInfo.score ,25,40);
+
+    ctx.fillText("Timer", cWidth - 60, 20);
+    ctx.fillText(gameInfo.timer , cWidth - 45, 40);
+  };
+  this.drawCatcher = function(){
+    /* Check if catcher reached the end */
+    if( catcher.x >= 0 && catcher.x <= cWidth - 120 ){
+      catcher.x+=catcher.gamma;
+      catcher.gamma = 0;
+      if(catcher.x < 0){
+        catcher.x = 0;
+      }else if(catcher.x > cWidth - 120){
+        catcher.x = cWidth - 120;
+      }
+    }
+    ctx.drawImage(catcher.item, catcher.x, catcher.y);
+  };
+  this.draw = function(){
+
+    this.drawBackground();
+    this.drawGameInfo();
+    this.drawCatcher();
+
+    for(var i = 0; i < numberOfItems; i++){
+      ctx.drawImage(objects[i].item, objects[i].x, objects[i].y);
+      objects[i].y += objects[i].speed;
+      /* make it reflow from top when it goes out of view or its caught by the catcher */
+      if (objects[i].y > cHeight || objects[i].caught) {
+        /* Calculate the Score */
+        if(objects[i].caught){
+          gameInfo.score += 10;
+        }else{
+          gameInfo.score -= 5;
+        }
           objects[i].y = -25; //wrt image size
           objects[i].x = getRandomInt(cWidth) - 25;
           objects[i].caught = false;
@@ -109,7 +154,6 @@ GAME.app = function(){
           && objects[i].x < catcher.x + 200 ){
           objects[i].caught = true;
       }
-
 
     }
   };
@@ -123,53 +167,6 @@ GAME.app = function(){
   };
 
   this.load();
-};
-var GameCatcherItem = function(){
-  this.item = new Image();
-  this.item.src = "https://cdn1.iconfinder.com/data/icons/adidas/128/Shoebox_512x512.png";
-  this.item.src2 = "https://cdn1.iconfinder.com/data/icons/windows-8-metro-style/128/tool_box.png";
-  this.x = cWidth / 2;
-  this.y = cHeight - 100;
-  this.gamma = 0;
-};
-var catcher;
-var gameCatcher = function(){
-  catcher = new GameCatcherItem();
-  console.log(catcher.item.naturalWidth);
-  /* device orientation event handler */
-  if (window.DeviceOrientationEvent) {
-    window.addEventListener('deviceorientation', function(event){
-      catcher.gamma = event.gamma;
-    }, false);
-  }
-  if (window.DeviceOrientationEvent) {
-    window.addEventListener('orientationchange', function(){
-      if(window.orientation == 90){
-        alert(" Landscape orientation not supported right now, Sorry !")
-      }
-    }, false);
-  }
-
-  this.checkCatched = function(){
-
-  };
-  this.draw = function(){
-    this.checkCatched();
-    /* Check if catcher reached the end */
-    if( catcher.x >= 0 && catcher.x <= cWidth - 120 ){
-      catcher.x+=catcher.gamma;
-      catcher.gamma = 0;
-      if(catcher.x < 0){
-        catcher.x = 0;
-      }else if(catcher.x > cWidth - 120){
-        catcher.x = cWidth - 120;
-      }
-    }
-    ctx.drawImage(catcher.item, catcher.x, catcher.y);
-  };
-
-  intervals['gameCatcher'] = setInterval(this.draw, 36);
-
 };
 
 var getRandomInt = function(max) {
@@ -198,16 +195,18 @@ return{
         if(selection > 0 ){
           $(".preview-img.mouth-closed").attr("src", event.target.result);
           $('.btn-start').fadeIn();
-       }else{
-        $(".preview-img.mouth-open").attr("src", event.target.result);
-      }
-    };
-    $(".btn-next").fadeIn().on('click',function(){
-      $('.step-1').hide();
-      selection++;
-      $('.step-2').fadeIn();
+          $(".btn-next").hide();
+        }else{
+          $(".preview-img.mouth-open").attr("src", event.target.result);
+        }
+      };
+      $(".btn-next").fadeIn().on('click',function(){
+        $(this).hide();
+        $('.step-1').hide();
+        selection++;
+        $('.step-2').fadeIn();
+      });
     });
-  });
     $('.start-page .btn-upload').on('click', function(){
       $('.form-upload-image input').trigger('click');
     });
@@ -217,15 +216,14 @@ return{
       GAME.app.startGame();
     });
   },
-  getImagesFromUser: function(){
-
-  },
   startGame: function(){
     gameInit();
     gameItems();
-    gameCatcher();
   }
-}
+  }
 }();
-GAME.app.welcome();
+
+$('.welcome-page').hide();
+// GAME.app.welcome();
+GAME.app.startGame();
 

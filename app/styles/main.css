@@ -1,0 +1,26 @@
+body{
+  margin: 0;
+}
+.start-page .preview-img{
+  height:50vh;
+  width:50vw;
+}
+
+.box{
+  background:black;
+  width:100vw;
+  height:10vh;
+  position: relative;
+  display: block;
+
+}
+.box .ball{
+  position: absolute;
+  bottom:0;
+  left:50%;
+  display: block;
+  background: white;
+  width:20px;
+  height:20px;
+  border-radius: 50%;
+}

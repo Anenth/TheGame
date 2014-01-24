@@ -20,16 +20,34 @@
   <!-- endbuild -->
 </head>
 <body>
+  <div class='welcome-page'>
+    <h1 class="font-effect-3d">Paddle <br> Pop</h1>
+    <h2 class="font-effect-3d-float"> Take a photo of your mouth to join the snack attack game now and win exciting prizes!</h2>
+    <button class="btn">Start</button>
+  </div>
+
+  <div class='start-page'>
+    <div class="step-1">
+      <h2 class="font-effect-3d-float"> Take a photo of your mouth open!</h2>
+      <img class='preview-img mouth-open'>
+      <button class="btn btn-next">Next</button>
+    </div>
+    <div class="step-2">
+     <h2 class="font-effect-3d-float">Now, Take a photo of your mouth closed!</h2>
+     <img class='preview-img mouth-closed'>
+   </div>
+
+   <form class ="form-upload-image" enctype='multipart/form-data' method='post'>
+    <input accept='image/*' type='file'>
+  </form>
+  <button class="btn btn-upload">Camera</button>
+
+  <button class="btn btn-start">Start</button>
+</div>
 <canvas id="game-canvas" width="200px" height="200px" ></canvas>
 
 
-<!--   <div class='start-page'>
-    <form enctype='multipart/form-data' method='post'>
-      <input accept='image/*' type='file'>
-    </form>
-    <img class='preview-img'>
-  </div>
-
+<!--
   <div class='box'>
     <div class='ball'></div>
   </div>
@@ -46,5 +64,6 @@
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
+  <link href='http://fonts.googleapis.com/css?family=Salsa&effect=3d | 3d-float' rel='stylesheet' type='text/css'>
 </body>
 </html>

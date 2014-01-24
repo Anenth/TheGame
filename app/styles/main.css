@@ -1,9 +1,80 @@
 body{
   margin: 0;
+  text-align: center;
+  color: #FFF;
+  font-family: 'Salsa', cursive;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
 }
+h1{
+  padding:40px 20px;
+  margin: 0;
+  font-family: 'Vast Shadow', cursive;
+  text-transform: capitalize;
+}
+h2{
+  padding:20px 30px;
+}
+img{
+  border:none;
+}
+.row{
+  display: block;;
+  overflow: hidden;
+}
+.row .col-1{
+  width: 50%;
+  float: left;
+}
+.btn{
+  box-shadow:inset 0px 1px 0px 0px #fce2c1;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffc477), color-stop(1, #fb9e25) );
+  background-color:#ffc477;
+  border-top-left-radius:20px;
+  border-top-right-radius:20px;
+  border-bottom-right-radius:20px;
+  border-bottom-left-radius:20px;
+  text-indent:0;
+  border:1px solid #eeb44f;
+  display:inline-block;
+  color:#ffffff;
+  font-size:19px;
+  font-weight:normal;
+  font-style:normal;
+  height:65px;
+  line-height:58px;
+  width:131px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 1px 0px #cc9f52;
+  margin-top: 20px;
+}
+.btn:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477) );
+  background-color:#fb9e25;
+}.btn:active {
+  position:relative;
+  top:1px;
+}
+.start-page, .btn-start, .step-2, .btn-next, .form-upload-image{
+  display: none;
+}
+
 .start-page .preview-img{
-  height:50vh;
   width:50vw;
+  display: block;
+  margin: 10px auto;
+}
+.start-page,.welcome-page{
+  overflow: hidden;
+  background: #7abcff;
+  background: -moz-radial-gradient(center, ellipse cover, #7abcff 0%, #60abf8 44%, #4096ee 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#7abcff), color-stop(44%,#60abf8), color-stop(100%,#4096ee));
+  background: -webkit-radial-gradient(center, ellipse cover, #7abcff 0%,#60abf8 44%,#4096ee 100%);
+  background: -o-radial-gradient(center, ellipse cover, #7abcff 0%,#60abf8 44%,#4096ee 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #7abcff 0%,#60abf8 44%,#4096ee 100%);
+  background: radial-gradient(ellipse at center, #7abcff 0%,#60abf8 44%,#4096ee 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=1 );
 }
 
 .box{

@@ -1,50 +1,27 @@
 var GAME = GAME || {};
-// window.requestAnimFrame = (function(callback) {
-//   return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
-//   function(callback) {
-//     window.setTimeout(callback, 1000 / 60);
-//   };
-// })();
-
-// function animate() {
-//   var canvas = document.getElementById('myCanvas');
-//   var context = canvas.getContext('2d');
-
-//         // update
-
-//         // clear
-//         context.clearRect(0, 0, canvas.width, canvas.height);
-
-//         // draw stuff
-
-//         // request new frame
-//         requestAnimFrame(function() {
-//           animate();
-//         });
-//       }
-//       animate();
-
-
-$(".start-page input").change(function(event){
-  var selectedFile = event.target.files[0];
-  var reader = new FileReader();
-  console.log(selectedFile);
-  reader.onload = function(event) {
-    $(".preview-img").attr("src", event.target.result);
+// shim layer with setTimeout fallback
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+  window.webkitRequestAnimationFrame ||
+  window.mozRequestAnimationFrame    ||
+  function( callback ){
+    window.setTimeout(callback, 1000 / 60);
   };
+})();
 
-  reader.readAsDataURL(selectedFile);
-});
+
 
 
 
 
 GAME.app = function(){
-  var ctx;
-  var cHeight = window.innerHeight;
-  var cWidth = window.innerWidth;
-  var numberOfItems = 10;
-
+  var ctx,
+  cHeight = window.innerHeight,
+  cWidth = window.innerWidth,
+  numberOfItems = 10,
+  intervals = [],
+  welcomePage = $('.welcome-page'),
+  startpage = $('.start-page');
   var gameInit = function(){
     var canvas = document.getElementById("game-canvas");
     canvas.width = cWidth;
@@ -82,11 +59,13 @@ GAME.app = function(){
   var gameInfo = new GameInfo();
   var timmer = function(){
     gameInfo.timer--;
-    if(gameInfo.timer == 0){
-      alert("game over!");
+    if(gameInfo.timer < 0){
+      alert("   You have Scored:"+ gameInfo.score +"\n   Thank you for playing.");
+      clearInterval(intervals['timer']);
+      clearInterval(intervals['gameItems']);
+      clearInterval(intervals['gameCatcher']);
     }
   };
-  setInterval(timmer, 1000);
 
 
   var gameItems = function(){
@@ -129,7 +108,7 @@ GAME.app = function(){
           && objects[i].x > catcher.x
           && objects[i].x < catcher.x + 200 ){
           objects[i].caught = true;
-        }
+      }
 
 
     }
@@ -139,7 +118,8 @@ GAME.app = function(){
       obj = new GameItem();
       this.objects.push(obj);
     };
-    setInterval(draw, 36);
+    intervals['gameItems'] = setInterval(draw, 36);
+    intervals['timer'] = setInterval(timmer, 1000);
   };
 
   this.load();
@@ -155,10 +135,18 @@ var GameCatcherItem = function(){
 var catcher;
 var gameCatcher = function(){
   catcher = new GameCatcherItem();
+  console.log(catcher.item.naturalWidth);
   /* device orientation event handler */
   if (window.DeviceOrientationEvent) {
     window.addEventListener('deviceorientation', function(event){
       catcher.gamma = event.gamma;
+    }, false);
+  }
+  if (window.DeviceOrientationEvent) {
+    window.addEventListener('orientationchange', function(){
+      if(window.orientation == 90){
+        alert(" Landscape orientation not supported right now, Sorry !")
+      }
     }, false);
   }
 
@@ -180,7 +168,7 @@ var gameCatcher = function(){
     ctx.drawImage(catcher.item, catcher.x, catcher.y);
   };
 
-  setInterval(this.draw, 36);
+  intervals['gameCatcher'] = setInterval(this.draw, 36);
 
 };
 
@@ -189,8 +177,49 @@ var getRandomInt = function(max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 return{
-  welcome: function(){},
-  getImagesFromUser: function(){},
+  welcome: function(){
+    var selectedFile = [],
+    reader = new FileReader(),
+    selection =0;
+    welcomePage
+    .css("width", cWidth)
+    .css("height", cHeight);
+    $('.welcome-page .btn').on('click', function(){
+      welcomePage.hide();
+      startpage.fadeIn();
+    });
+    startpage
+    .css("width", cWidth)
+    .css("height", cHeight);
+    $(".form-upload-image input").change(function(event){
+      selectedFile[selection] = event.target.files[selection];
+      reader.readAsDataURL(selectedFile[0]);
+      reader.onload = function(event) {
+        if(selection > 0 ){
+          $(".preview-img.mouth-closed").attr("src", event.target.result);
+          $('.btn-start').fadeIn();
+       }else{
+        $(".preview-img.mouth-open").attr("src", event.target.result);
+      }
+    };
+    $(".btn-next").fadeIn().on('click',function(){
+      $('.step-1').hide();
+      selection++;
+      $('.step-2').fadeIn();
+    });
+  });
+    $('.start-page .btn-upload').on('click', function(){
+      $('.form-upload-image input').trigger('click');
+    });
+
+    $('.start-page .btn-start').on('click', function(){
+      startpage.fadeOut();
+      GAME.app.startGame();
+    });
+  },
+  getImagesFromUser: function(){
+
+  },
   startGame: function(){
     gameInit();
     gameItems();
@@ -198,6 +227,5 @@ return{
   }
 }
 }();
-
-GAME.app.startGame();
+GAME.app.welcome();
 

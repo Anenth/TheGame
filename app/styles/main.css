@@ -26,6 +26,9 @@ img{
   width: 50%;
   float: left;
 }
+canvas{
+  display: none;
+}
 .btn{
   box-shadow:inset 0px 1px 0px 0px #fce2c1;
   background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffc477), color-stop(1, #fb9e25) );
@@ -66,7 +69,6 @@ img{
   margin: 10px auto;
 }
 .start-page,.welcome-page{
-  overflow: hidden;
   background: #7abcff;
   background: -moz-radial-gradient(center, ellipse cover, #7abcff 0%, #60abf8 44%, #4096ee 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#7abcff), color-stop(44%,#60abf8), color-stop(100%,#4096ee));

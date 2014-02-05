@@ -1,0 +1,978 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ga",
+				"gameStart"
+			],
+			[
+				"nu",
+				"numberOfItems"
+			],
+			[
+				"it",
+				"itemsLoaded"
+			],
+			[
+				"back",
+				"backgroundImage"
+			],
+			[
+				"sele",
+				"selectedFile"
+			],
+			[
+				"w",
+				"welcome-page"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"margin-",
+				"margin-top"
+			],
+			[
+				"t",
+				"timer"
+			],
+			[
+				"set",
+				"setTimeout"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"com",
+				"comm-block	Comment - Block style comment"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"game",
+				"gameItem"
+			],
+			[
+				"gamma",
+				"gammaArray"
+			],
+			[
+				"desc",
+				"description"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"bg",
+				"bg+	background+"
+			],
+			[
+				"re",
+				"relative"
+			],
+			[
+				"ab",
+				"absolute"
+			],
+			[
+				"comm",
+				"comm-section	Comment - Full section comment"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"op",
+				"opacity"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/index.html",
+			"settings":
+			{
+				"buffer_size": 2347,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/main.js",
+			"settings":
+			{
+				"buffer_size": 8093,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/anenth/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 1400,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/anenth/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 660,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/styles/main.css",
+			"settings":
+			{
+				"buffer_size": 2511,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 93.0,
+		"selected_items":
+		[
+			[
+				"projec",
+				"Project: Save As"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"upda",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"lin",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"rien",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"re",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ip",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"sublimeLinter",
+				"SublimeLinter: Enable Debug Mode"
+			],
+			[
+				"bs3pag",
+				"Snippet: bs3-pagination"
+			],
+			[
+				"coffe",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"pref",
+				"Preferences: Settings - User"
+			],
+			[
+				"edi",
+				"Emmet: Encode\\Decode Image to data:URL"
+			],
+			[
+				"task",
+				"Tasks: New document"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 453.0
+	},
+	"console":
+	{
+		"height": 407.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/anenth/Code/TheGame/app/bower_components/jquery/composer.json",
+		"/Users/anenth/Code/TheGame/app/bower_components/jquery/README.md",
+		"/Users/anenth/Code/TheGame/app/bower_components/jquery/package.json",
+		"/Users/anenth/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/anenth/Code/TheGame/app/scripts/main.js",
+		"/Users/anenth/Code/TheGame/app/styles/main.scss",
+		"/Users/anenth/Code/test/app/styles/main.scss",
+		"/Users/anenth/Code/test/app/bower_components/angular-cookies/README.md",
+		"/Users/anenth/Code/test/app/robots.txt",
+		"/Users/anenth/Code/test/app/views/main.html",
+		"/Users/anenth/ehqv2/app/themes/default/views/layouts/public.html.haml",
+		"/Users/anenth/ehqv2/app/themes/adelaide_city/assets/javascripts/adelaide_city/jGFeed.js",
+		"/Users/anenth/ehqv2/db/seeds.rb",
+		"/Users/anenth/ehqv2/lib/tasks/app.rake",
+		"/Users/anenth/ehqv2/app/controllers/application_controller.rb",
+		"/Users/anenth/ehqv2/PullRequestChecklist.md",
+		"/Users/anenth/ehqv2/spec/fixtures/images/a_python_prog.py",
+		"/Users/anenth/ehqv2/config/application.rb",
+		"/Users/anenth/ehqv2/tmp/cache/sass/3fc163dfc860739ab45d385d2ce39e30d463485c/adelaide_city.css.scssc",
+		"/Users/anenth/ehqv2/app/themes/adelaide_city/assets/stylesheets/adelaide_city/adelaide_city.css.scss",
+		"/Users/anenth/ehqv2/tmp/cache/sass/3fc163dfc860739ab45d385d2ce39e30d463485c/iefix_adelaide.css.scssc",
+		"/Users/anenth/ehqv2/lib/authorized_domains.rb",
+		"/Users/anenth/ehqv2/lib/validators/admin_login_validator.rb",
+		"/Users/anenth/ehqv2/spec/shared_examples/shared_examples_for_qanda_email_template.rb",
+		"/Users/anenth/ehqv2/config/stories_email_templates.yml",
+		"/Users/anenth/ehqv2/config/schedule.rb",
+		"/Users/anenth/ehqv2/lib/tasks/db.rake",
+		"/Users/anenth/ehqv2/.rspec",
+		"/Users/anenth/ehqv2/.gitignore",
+		"/Users/anenth/ehqv2/config/locales/reports.yml",
+		"/Users/anenth/ehqv2/app/themes/default/assets/javascripts/default/default.js.coffee",
+		"/Users/anenth/ehqv2/config/initializers/boomerang.rb",
+		"/Users/anenth/ehqv2/app/themes/default/views/search/index.html.haml",
+		"/Users/anenth/ehqv2/app/themes/default/views/search/_search_form.html.haml",
+		"/Users/anenth/ehqv2/app/themes/default/assets/stylesheets/default/search.css.scss",
+		"/Users/anenth/ehqv2/app/models/search_results_parser.rb",
+		"/Users/anenth/ehqv2/app/models/searcher.rb",
+		"/Users/anenth/ehqv2/config/initializers/secret_token.rb",
+		"/Users/anenth/ehqv2/app/themes/mobile/node_modules/bower/test/init.js",
+		"/Users/anenth/ehqv2/db/migrate/20130410081439_set_initial_platform_password.rb",
+		"/Users/anenth/ehqv2/config/initializers/inflections.rb",
+		"/Users/anenth/ehqv2/lib/data_migration/assets/import_photo.rb",
+		"/Users/anenth/ehqv2/Capfile",
+		"/Users/anenth/ehqv2/app/models/comment_observer.rb",
+		"/Users/anenth/ehqv2/config.ru",
+		"/Users/anenth/ehqv2/config/initializers/active_record_becomes_valid_patch.rb",
+		"/Users/anenth/ehqv2/config/initializers/i18n.rb",
+		"/Users/anenth/ehqv2/config/initializers/help_text.rb",
+		"/Users/anenth/ehqv2/config/initializers/airbrake.rb",
+		"/Users/anenth/ehqv2/config/initializers/liquid_template_handler.rb",
+		"/Users/anenth/ehqv2/config/initializers/exception.rb",
+		"/Users/anenth/ehqv2/config/initializers/resque.rb",
+		"/Users/anenth/ehqv2/config/initializers/backtrace_silencers.rb",
+		"/Users/anenth/ehqv2/config/initializers/omniauth.rb",
+		"/Users/anenth/ehqv2/config/backgroundrb.yml",
+		"/Users/anenth/ehqv2/app/models/bulk_upload_file.rb",
+		"/Users/anenth/ehqv2/app/themes/adelaide_city/views/layouts/_head_nav.html.haml",
+		"/Users/anenth/ehqv2/app/themes/adelaide_city/views/layouts/public.html.haml",
+		"/Users/anenth/ehqv2/app/themes/adelaide_city/views/projects/show.html.haml",
+		"/Users/anenth/ehqv2/app/themes/adelaide_city/assets/javascripts/adelaide_city/script.js",
+		"/Users/anenth/ehqv2/app/themes/adelaide_city/assets/javascripts/adelaide_city/adl_navigation.js",
+		"/Users/anenth/ehqv2/lib/tasks/search.rake",
+		"/Users/anenth/ehqv2/app/models/search_result.rb",
+		"/Users/anenth/ehqv2/db/migrate/20130903093829_add_deep_rebrand_theme_name_to_sites.rb",
+		"/Users/anenth/ehqv2/app/views/errors/access_denied.html.haml",
+		"/Users/anenth/ehqv2/lib/validators/admin_email_validator.rb",
+		"/Users/anenth/ehqv2/app/assets/javascripts/dependent.js.coffee",
+		"/Users/anenth/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/anenth/ehqv2/app/assets/stylesheets/admin-typography.css.scss",
+		"/Users/anenth/ehqv2/app/views/layouts/_breadcrumbs.html.haml",
+		"/Users/anenth/ehqv2/app/themes/adelaide_city/assets/javascripts/adelaide_city/script-override.js",
+		"/Users/anenth/Downloads/BTT/Adelaide City/acc/js/script.js",
+		"/Users/anenth/Downloads/BTT/Adelaide City/acc/js/script-override.js",
+		"/Users/anenth/Downloads/acc/js/script.js",
+		"/Users/anenth/Downloads/acc/js/jquery.hoverIntent.minified.js",
+		"/Users/anenth/Downloads/acc/js/script-override.js",
+		"/Users/anenth/ehqv2/app/themes/default/views/layouts/projects.html.haml",
+		"/Users/anenth/ehqv2/config/api-doc/projects.yml",
+		"/Users/anenth/ehqv2/app/models/project.rb",
+		"/Users/anenth/ehqv2/config/routes/project_routes.rb",
+		"/Users/anenth/ehqv2/spec/shared_examples/shared_examples_for_state_changeable.rb",
+		"/Users/anenth/ehqv2/spec/models/searcher_spec.rb",
+		"/Users/anenth/ehqv2/app/controllers/search_controller.rb",
+		"/Users/anenth/ehqv2/lib/search_password_hash.rb",
+		"/Users/anenth/ehqv2/app/models/answers/section_answer.rb",
+		"/Users/anenth/ehqv2/app/themes/mobile/node_modules/karma/node_modules/log4js/lib/appenders/dateFile.js",
+		"/Users/anenth/ehqv2/app/helpers/themes/adelaide_city_helper.rb",
+		"/Users/anenth/ehqv2/app/controllers/public_controller.rb",
+		"/Users/anenth/ehqv2/tmp/cache/sass/069f07c855acdd69c497f8eb72ad84c8a9df6f24/search.css.scssc",
+		"/Users/anenth/ehqv2/app/assets/javascripts/admin/survey_archive.js.coffee",
+		"/Users/anenth/ehqv2/tmp/cache/sass/dee768c8138879af5fdf1461a143122f62fe3afb/admin-typography.css.scssc",
+		"/Users/anenth/ehqv2/app/assets/stylesheets/admin/projects_list.css.scss",
+		"/Users/anenth/ehqv2/lib/reports/participants_report.rb",
+		"/Users/anenth/ehqv2/app/models/platform_authenticator.rb",
+		"/Users/anenth/ehqv2/app/models/participation_configuration.rb",
+		"/Users/anenth/ehqv2/app/models/StaticPage.where(page_access_type: StaticPage::EHQ",
+		"/Users/anenth/ehqv2/app/assets/javascripts/admin/projects_list.js",
+		"/Users/anenth/ehqv2/lib/reports/projects_list_stats.rb",
+		"/Users/anenth/ehqv2/lib/data_migration/projects/project_link_importer.rb",
+		"/Users/anenth/ehqv2/app/themes/doj/assets/stylesheets/doj/doj_styles/base.css.scss",
+		"/Users/anenth/ehqv2/app/themes/default/assets/stylesheets/default/border_radius_pie.css.scss",
+		"/Users/anenth/ehqv2/app/themes/doj/views/layouts/public.html.haml",
+		"/Users/anenth/ehqv2/app/themes/doj/assets/stylesheets/doj/doj_styles/layout.css.scss",
+		"/Users/anenth/ehqv2/app/themes/doj/assets/javascripts/doj/ytp.js",
+		"/Users/anenth/ehqv2/app/themes/doj/assets/javascripts/doj/navigation.js",
+		"/Users/anenth/ehqv2/app/themes/doj/assets/javascripts/doj/iefix.js",
+		"/Users/anenth/ehqv2/app/themes/doj/assets/javascripts/doj/doj.js.coffee",
+		"/Users/anenth/ehqv2/app/themes/doj/assets/stylesheets/doj/bootstrap/less/variables.less",
+		"/Users/anenth/ehqv2/app/themes/doj/assets/stylesheets/doj/bootstrap/less/jumbotron.less",
+		"/Users/anenth/ehqv2/app/helpers/themes/doj_helper.rb",
+		"/Users/anenth/ehqv2/app/models/document.rb",
+		"/Users/anenth/ehqv2/config/database.yml",
+		"/Users/anenth/ehqv2/app/themes/default/assets/javascripts/default/aria/application.js",
+		"/Users/anenth/ehqv2/app/themes/default/views/projects/survey_responses/forms/_image_answer_form.html.haml",
+		"/Users/anenth/ehqv2/db/migrate/20131119072714_add_reports_indices.rb",
+		"/Users/anenth/ehqv2/config/initializers/activity_report_help_text.rb",
+		"/Users/anenth/ehqv2/app/models/redactor_asset.rb",
+		"/Users/anenth/ehqv2/app/models/reports/aware_visit.rb",
+		"/Users/anenth/ehqv2/app/themes/doj/assets/stylesheets/doj/bootstrap/css/bootstrap3_custom.css",
+		"/Users/anenth/ehqv2/app/themes/doj/views/projects/widgets/_key_link_widget.html.haml",
+		"/Users/anenth/ehqv2/app/themes/doj/assets/stylesheets/doj/iefix_border_radius.css.scss",
+		"/Users/anenth/ehqv2/app/themes/default/assets/stylesheets/default/layout.css.scss",
+		"/Users/anenth/ehqv2/spec/controllers/search_controller_spec.rb",
+		"/Users/anenth/ehqv2/app/themes/mobile/node_modules/bower/test/assets/package-deps-on-jquery/bower.json",
+		"/Users/anenth/ehqv2/vendor/assets/font-awesome/docs/assets/js/jquery-1.7.1.min.js",
+		"/Users/anenth/ehqv2/tmp/cache/sass/3f3c170e35ae7446e6815454db39fabc042086ec/doj.css.scssc",
+		"/Users/anenth/ehqv2/app/themes/default/assets/stylesheets/default/default.css.scss",
+		"/Users/anenth/ehqv2/tmp/cache/sass/0cd878e40b9f6028fb144ce62e22decd86a54f1a/layout.css.scssc"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"app/themes/mobile/app/",
+			"/app/themes/mobile/app/",
+			"/app/themes/mobile/app/scripts/controllers/surveys.coffee",
+			"*/themes/mobile/"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"space",
+			"gameCatcher",
+			"ran",
+			"cdn1",
+			"next",
+			"classname",
+			"var",
+			"gamma",
+			"\"",
+			"portrait",
+			"=",
+			"= ",
+			"var",
+			"50",
+			"160",
+			"90",
+			"gamma",
+			"20",
+			"10",
+			"presentLoc",
+			"img",
+			"objects",
+			"32",
+			"fallingDrops",
+			"this.objects",
+			"object",
+			"obj",
+			"32",
+			"#main-menu div",
+			"#top-nav div",
+			"#top-nav",
+			"bindMenuButtons",
+			"#top-nav",
+			"nav",
+			"right",
+			"main-menu",
+			"main-link",
+			"Moder",
+			"::-webkit-input-placeholder ",
+			"mag",
+			"map",
+			"container",
+			"red",
+			"style",
+			"will_paginate",
+			"respond.min",
+			"offscreen_jump_link",
+			"page_heading",
+			"signup_form_response_confirmation_token",
+			"new_signup_form_response",
+			".new_signup_form_response",
+			"Already have an account with us?",
+			"registration-steps",
+			"skipLinks",
+			"sr-only ",
+			";",
+			"laquo",
+			"%small",
+			".sub-heading",
+			".tooltip",
+			"number_to_percentage",
+			"data_to_percent",
+			"percent_total",
+			"positive.png",
+			"negative.png",
+			".negative.ong",
+			"label",
+			"percentage",
+			"reports.yml",
+			"dashboard",
+			"current_project",
+			"border-radius",
+			"fa"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								321,
+								321
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/scripts/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8093,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								754,
+								754
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 503.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/anenth/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1400,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								796,
+								796
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/anenth/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								265,
+								265
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/styles/main.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2511,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2230,
+								2230
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 921.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "theGame.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"publi",
+				"app/themes/adelaide_city/views/layouts/public.html.haml"
+			],
+			[
+				"adel",
+				"app/themes/adelaide_city/assets/stylesheets/adelaide_city/adelaide_city.css.scss"
+			],
+			[
+				"adljs",
+				"app/themes/adelaide_city/assets/javascripts/adelaide_city/adl_navigation.js"
+			],
+			[
+				"seed",
+				"db/seeds.rb"
+			],
+			[
+				".rake",
+				"lib/tasks/app.rake"
+			],
+			[
+				"applcont",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"search/",
+				"app/themes/default/views/search/_search_form.html.haml"
+			],
+			[
+				"public",
+				"app/themes/default/views/layouts/public.html.haml"
+			],
+			[
+				"serach/in",
+				"app/themes/default/views/search/index.html.haml"
+			],
+			[
+				"adenav",
+				"app/themes/adelaide_city/assets/javascripts/adelaide_city/adl_navigation.js"
+			],
+			[
+				"search.css",
+				"app/themes/default/assets/stylesheets/default/search.css.scss"
+			],
+			[
+				"app/themes/adelaide_city/views/layouts/public.html.haml",
+				"app/themes/adelaide_city/views/layouts/public.html.haml"
+			],
+			[
+				"seach",
+				"app/models/search_results_parser.rb"
+			],
+			[
+				"search/in",
+				"app/themes/default/views/search/index.html.haml"
+			],
+			[
+				"search.cs",
+				"app/themes/default/assets/stylesheets/default/search.css.scss"
+			],
+			[
+				"adelaid/public",
+				"app/themes/adelaide_city/views/layouts/public.html.haml"
+			],
+			[
+				"adela",
+				"app/themes/adelaide_city/assets/stylesheets/adelaide_city/adelaide_city.css.scss"
+			],
+			[
+				"search.ss",
+				"app/themes/default/assets/stylesheets/default/search.css.scss"
+			],
+			[
+				"config/application.rb",
+				"config/application.rb"
+			],
+			[
+				"app/themes/adelaide_city/views/projects/show.html.haml",
+				"app/themes/adelaide_city/views/projects/show.html.haml"
+			],
+			[
+				"search",
+				"app/themes/default/views/search/index.html.haml"
+			],
+			[
+				"projectlis",
+				"app/assets/stylesheets/admin/projects_list.css.scss"
+			],
+			[
+				"doj/java",
+				"app/themes/doj/assets/javascripts/doj/ytp.js"
+			],
+			[
+				"a",
+				"config/application.rb"
+			],
+			[
+				"aria/a",
+				"app/themes/default/assets/javascripts/default/aria/application.js"
+			],
+			[
+				"app/themes/doj/assets/stylesheets/doj/doj_styles/layout.css.scss",
+				"app/themes/doj/assets/stylesheets/doj/doj_styles/layout.css.scss"
+			],
+			[
+				"doj/bas",
+				"app/themes/doj/assets/stylesheets/doj/doj_styles/base.css.scss"
+			],
+			[
+				"doj/lay",
+				"app/themes/doj/assets/stylesheets/doj/doj_styles/layout.css.scss"
+			],
+			[
+				"pp/themes/default/views/search/index.html.haml",
+				"app/themes/default/views/search/index.html.haml"
+			],
+			[
+				"aria/appl",
+				"app/themes/default/assets/javascripts/default/aria/application.js"
+			],
+			[
+				"search.rake",
+				"lib/tasks/search.rake"
+			],
+			[
+				"doj/ief",
+				"app/themes/doj/assets/stylesheets/doj/iefix_border_radius.css.scss"
+			],
+			[
+				"doj/pu",
+				"app/themes/doj/views/layouts/public.html.haml"
+			],
+			[
+				"layout",
+				"app/themes/default/assets/stylesheets/default/layout.css.scss"
+			],
+			[
+				"lay",
+				"app/themes/mobile/app/styles/layout.scss"
+			],
+			[
+				"breadc",
+				"app/views/layouts/_breadcrumbs.html.haml"
+			],
+			[
+				"doj/publi",
+				"app/themes/doj/views/layouts/public.html.haml"
+			],
+			[
+				"aria/",
+				"app/themes/default/assets/javascripts/default/aria/application.js"
+			],
+			[
+				"navi",
+				"app/themes/doj/assets/javascripts/doj/navigation.js"
+			],
+			[
+				"search.scs",
+				"app/themes/default/assets/stylesheets/default/search.css.scss"
+			],
+			[
+				"seacher",
+				"app/models/searcher.rb"
+			],
+			[
+				"searchresult",
+				"app/models/search_results_parser.rb"
+			],
+			[
+				"dojlay",
+				"app/themes/doj/assets/stylesheets/doj/doj_styles/layout.css.scss"
+			],
+			[
+				"regi",
+				"config/locales/views/devise/registrations.yml"
+			],
+			[
+				"dojlogin",
+				"app/themes/doj/assets/stylesheets/doj/doj_styles/modules/login.css.scss"
+			],
+			[
+				"dojform",
+				"app/themes/doj/assets/stylesheets/doj/doj_styles/modules/forms.css.scss"
+			],
+			[
+				"dojwid",
+				"app/themes/doj/assets/stylesheets/doj/doj_styles/modules/widgets.css.scss"
+			],
+			[
+				"dojnav",
+				"app/themes/doj/assets/stylesheets/doj/doj_styles/modules/navigation.css.scss"
+			],
+			[
+				"doj/views.",
+				"app/themes/doj/views/projects/show.html.haml"
+			],
+			[
+				"dojbutton",
+				"app/themes/doj/assets/stylesheets/doj/doj_styles/modules/buttons.css.scss"
+			],
+			[
+				"dojlayout",
+				"app/themes/doj/assets/stylesheets/doj/doj_styles/layout.css.scss"
+			],
+			[
+				"doj/base",
+				"app/themes/doj/assets/stylesheets/doj/doj_styles/base.css.scss"
+			],
+			[
+				"base.s",
+				"app/themes/mobile/app/styles/base.scss"
+			],
+			[
+				"doj/",
+				"app/themes/doj/views/layouts/public.html.haml"
+			],
+			[
+				"doj/sh",
+				"app/themes/doj/views/projects/show.html.haml"
+			],
+			[
+				"doj/her",
+				"app/themes/doj/assets/stylesheets/doj/doj_styles/modules/hero_unit.css.scss"
+			],
+			[
+				"dashbo",
+				"app/assets/stylesheets/dashboard.css.scss"
+			],
+			[
+				"reports.cs",
+				"app/assets/stylesheets/admin/reports.css.scss"
+			],
+			[
+				"reports",
+				"config/locales/reports.yml"
+			],
+			[
+				"admin/reports/box",
+				"app/views/admin/reports/_box.html.haml"
+			],
+			[
+				"ip",
+				"lib/data_migration/assets/import_photo.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 227.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

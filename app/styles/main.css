@@ -78,7 +78,10 @@ canvas{
   background: radial-gradient(ellipse at center, #7abcff 0%,#60abf8 44%,#4096ee 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=1 );
 }
+.step-1, .step-2{
+  overflow: hidden;
 
+}
 .box{
   background:black;
   width:100vw;

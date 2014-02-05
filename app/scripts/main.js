@@ -1,17 +1,13 @@
 var GAME = GAME || {};
 // shim layer with setTimeout fallback
 window.requestAnimFrame = (function(){
-  return  window.requestAnimationFrame       ||
-  window.webkitRequestAnimationFrame ||
-  window.mozRequestAnimationFrame    ||
+  return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame    ||
   function( callback ){
     window.setTimeout(callback, 1000 / 60);
   };
 })();
-
-
-
-
+// enable vibration support
+navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
 
 
 GAME.app = function(){
@@ -23,28 +19,36 @@ GAME.app = function(){
   welcomePage = $('.welcome-page'),
   startpage = $('.start-page'),
   gameItemsResource = [
-  'https://cdn1.iconfinder.com/data/icons/winter_png/32/christmas_5.png',
-  'https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/114-32.png',
-  'https://cdn1.iconfinder.com/data/icons/ie_Smashing_Christmas/32/christmas_35.png',
-  'https://cdn1.iconfinder.com/data/icons/Easter_lin/png/32x32/Ovo.png',
-  'https://cdn1.iconfinder.com/data/icons/desktop-halloween/32/Candy.png',
-  'https://cdn1.iconfinder.com/data/icons/iconshock_vista_CharlieandtheChocolateFactory/png/32/CharlieandtheChocolateFactory1.png',
-  'https://cdn1.iconfinder.com/data/icons/Birthday_iconfinder/32/lolly-strawberry.png',
-  'https://cdn1.iconfinder.com/data/icons/icon-set-32-px/32/Candy_Apple.png',
-  'https://cdn1.iconfinder.com/data/icons/CrystalClear/32x32/apps/icons.png',
-  'https://cdn1.iconfinder.com/data/icons/fatcow/32/candy_cane.png'
-  ];
+  'images/candy_1.png',
+  'images/candy_2.png',
+  'images/candy_3.png',
+  'images/candy_4.png',
+  'images/candy_5.png',
+  'images/candy_6.png',
+  'images/candy_7.png',
+  'images/candy_8.png',
+  'images/candy_9.png',
+  'images/candy_10.png'
+  ],
+  backgroundImage = 'images/bg.jpg',
+  itemsLoaded = 0,
+  catcher,
+  gameInfo;
+
 
   /**
    * [gameInit This function sets the width and height of the canvas and get CTX ]
    * @return {[type]} [description]
    */
-   var gameInit = function(){
-    var canvas = document.getElementById("game-canvas");
+   var gameInit = function(user_selectedFile){
+    var canvas = document.getElementById('game-canvas');
     canvas.width = cWidth;
     canvas.height = cHeight;
-    canvas.style.display = "block";
+    canvas.style.display = 'block';
     ctx = canvas.getContext('2d');
+    catcher = new GameCatcherItem(user_selectedFile);
+    gameInfo = new GameInfo();
+    gameCatcherHandler();
   };
 
   /**
@@ -56,14 +60,16 @@ GAME.app = function(){
    */
    var GameItem = function(){
     this.item = new Image();
-    this.item.src = gameItemsResource[ getRandomInt(gameItemsResource.length) ];
+    var randomNumber = getRandomInt(gameItemsResource.length - 1);
+    this.item.src = gameItemsResource[ randomNumber ];
+    this.item.onload = this.load;
     this.x = getRandomInt(cWidth);
     this.y = getRandomInt(5);
     this.speed = 3 + getRandomInt(5);
     this.caught = false;
   };
-  GameItem.prototype.dropItem = function() {
-
+  GameItem.prototype.load = function() {
+    itemsLoaded++;
   };
 
   /**
@@ -77,13 +83,17 @@ GAME.app = function(){
    * [GameCatcherItem this object is used to initialize the Catcher used to
    * catch the canndy]
    */
-   var GameCatcherItem = function(){
+   var GameCatcherItem = function(selectedFile){
     this.item = new Image();
-    this.item.src = "https://cdn1.iconfinder.com/data/icons/adidas/128/Shoebox_512x512.png";
-    this.item.src2 = "https://cdn1.iconfinder.com/data/icons/windows-8-metro-style/128/tool_box.png";
+    this.item.src = selectedFile[0];
+    this.width = 100;
+    this.height = 100;
+    this.item2 = new Image();
+    this.item2.src = selectedFile[1];
     this.x = cWidth / 2;
-    this.y = cHeight - 100;
+    this.y = cHeight - this.height - 10;
     this.gamma = 0;
+    this.caught = false;
   };
   /**
    * [gameCatcherHandler this fuction sets the Orientaion event handlers ]
@@ -97,7 +107,7 @@ GAME.app = function(){
     if (window.DeviceOrientationEvent) {
       window.addEventListener('orientationchange', function(){
         if(window.orientation == 90){
-          alert(" Landscape orientation not supported right now, Sorry !")
+          alert(' Landscape orientation not supported right now, Sorry !')
         }
       }, false);
     }
@@ -105,13 +115,13 @@ GAME.app = function(){
   /**
    * [timmer this functions is responsible for the timmer and end messages]
    */
-    var timmer = function(){
+   var timmer = function(){
     gameInfo.timer--;
     if(gameInfo.timer < 0){
-      alert("   Game Over !  \n   You have Scored:"+ gameInfo.score +"\n   Thank you for playing.");
+      alert('   Game Over !  \n   You have Scored:'+ gameInfo.score +'\n   Thank you for playing.');
       clearInterval(intervals['timer']);
       clearInterval(intervals['gameItems']);
-      clearInterval(intervals['gameCatcher']);
+      location.reload();
     }
   };
 
@@ -119,32 +129,34 @@ GAME.app = function(){
   /**
    * [gameItems object which manages all the ressources and resposible for re-drawing ]
    */
-  var gameItems = function(){
+   var gameItems = function(){
     this.objects = [];
     this.imgBg = new Image();
-    this.imgBg.src = "http://wallpoper.com/images/00/42/22/95/shapes-gradient_00422295.jpg";
+    this.imgBg.src = backgroundImage;
+    this.caught_counter = 0;
     var obj;
     /**
      * [drawBackground draw the background image]
      */
-    this.drawBackground = function(){
-      ctx.drawImage(imgBg, 0, 0);
+     this.drawBackground = function(){
+      ctx.drawImage(imgBg, 0, 0, cWidth, cHeight);
     };
     /**
      * [drawGameInfo functiont to update the game information ]
      */
-    this.drawGameInfo = function(){
-      ctx.font="20px Georgia";
-      ctx.fillText("Score",10,20);
+     this.drawGameInfo = function(){
+      ctx.font='20px Georgia';
+      ctx.fillStyle = 'white';
+      ctx.fillText('Score',10,20);
       ctx.fillText(gameInfo.score ,25,40);
 
-      ctx.fillText("Timer", cWidth - 60, 20);
+      ctx.fillText('Timer', cWidth - 60, 20);
       ctx.fillText(gameInfo.timer , cWidth - 45, 40);
     };
     /**
      * [drawCatcher function to update the game catcher]
      */
-    this.drawCatcher = function(){
+     this.drawCatcher = function(){
       /* Check if catcher reached the end */
       if( catcher.x >= 0 && catcher.x <= cWidth - 120 ){
         catcher.x+=catcher.gamma;
@@ -155,22 +167,29 @@ GAME.app = function(){
           catcher.x = cWidth - 120;
         }
       }
-      ctx.drawImage(catcher.item, catcher.x, catcher.y);
+      if(catcher.caught){
+        ctx.drawImage(catcher.item2, catcher.x, catcher.y, catcher.width, catcher.height);
+        if(caught_counter < 1)
+          catcher.caught = false;
+        caught_counter--;
+      }else{
+        ctx.drawImage(catcher.item, catcher.x, catcher.y, catcher.width, catcher.height);
+      }
+
     };
     /**
      * [draw function to manage all the draw function. This fuction will draw
      *  all the items required for the game]
      */
-    this.draw = function(){
+     this.draw = function(){
 
       this.drawBackground();
       this.drawGameInfo();
       this.drawCatcher();
-
       /**
        * For each items draw the falling object and calculate the score if caugth
        */
-      for(var i = 0; i < numberOfItems; i++){
+       for(var i = 0; i < numberOfItems; i++){
         ctx.drawImage(objects[i].item, objects[i].x, objects[i].y);
         objects[i].y += objects[i].speed;
         /* make it reflow from top when it goes out of view or its caught by the catcher */
@@ -186,10 +205,15 @@ GAME.app = function(){
           objects[i].caught = false;
         }
         /* Check if the object it caught by the catcher */
-        if( objects[i].y > cHeight - 120
-          && objects[i].x > catcher.x
-          && objects[i].x < catcher.x + 200 ){
+        if( objects[i].y > cHeight - catcher.height &&
+          objects[i].x > catcher.x &&
+          objects[i].x < catcher.x + catcher.width ){
           objects[i].caught = true;
+          catcher.caught = true;
+          caught_counter = 10;
+          if (navigator.vibrate) {
+            navigator.vibrate(1000);
+          }
       }
 
     }
@@ -198,9 +222,18 @@ GAME.app = function(){
     for(var i = 0; i < numberOfItems; i++){
       obj = new GameItem();
       this.objects.push(obj);
-    };
-    intervals['gameItems'] = setInterval(draw, 36);
-    intervals['timer'] = setInterval(timmer, 1000);
+    }
+    /* Check if all the resouses are loaded */
+    intervals['gameStart'] = setInterval(gameStart, 500)
+  };
+
+  /*Function to check if all the resouses are loaded */
+  this.gameStart = function(){
+    if(itemsLoaded == numberOfItems){
+      clearInterval(intervals['gameStart']);
+      intervals['gameItems'] = setInterval(draw, 36);
+      intervals['timer'] = setInterval(timmer, 1000);
+    }
   };
 
   this.load();
@@ -208,63 +241,67 @@ GAME.app = function(){
 /**
  * [getRandomInt function to generate a random number]
  */
-var getRandomInt = function(max) {
+ var getRandomInt = function(max) {
   min = 0;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-var catcher = new GameCatcherItem();
-  var gameInfo = new GameInfo();
-  gameCatcherHandler();
+
+
 return{
   welcome: function(){
-    var selectedFile = [],
-    reader = new FileReader(),
+    var reader = new FileReader(),
+    selectedFile = [],
     selection = 0;
 
     welcomePage
-    .css("width", cWidth)
-    .css("height", cHeight);
+    .css('width', cWidth)
+    .css('height', cHeight);
     $('.welcome-page .btn').on('click', function(){
       welcomePage.hide();
       startpage.fadeIn();
     });
     startpage
-    .css("width", cWidth)
-    .css("height", cHeight);
-    $(".form-upload-image input").change(function(event){
-      selectedFile[selection] = event.target.files[selection];
-      reader.readAsDataURL(selectedFile[0]);
+    .css('width', cWidth)
+    .css('height', cHeight);
+    /**
+     * 1.Listen to change in the input form,
+     * 2.Store the URL of the image to seletedFile array
+     * 3.Use File Reader to preview the image on to img tags
+     */
+     $('.form-upload-image input').change(function(event){
+      selectedFile[selection] = URL.createObjectURL(event.target.files[0]);
+      reader.readAsDataURL(event.target.files[0]);
       reader.onload = function(event) {
         if(selection > 0 ){
-          $(".preview-img.mouth-closed").attr("src", event.target.result);
+          $('.preview-img.mouth-closed').attr('src', event.target.result);
           $('.btn-start').fadeIn();
-          $(".btn-next").hide();
+          $('.btn-next').hide();
         }else{
-          $(".preview-img.mouth-open").attr("src", event.target.result);
+          $('.preview-img.mouth-open').attr('src', event.target.result);
         }
       };
-      $(".btn-next").fadeIn().on('click',function(){
+      $('.btn-next').fadeIn().on('click',function(){
         $(this).hide();
         $('.step-1').hide();
         selection++;
         $('.step-2').fadeIn();
       });
     });
-    $('.start-page .btn-upload').on('click', function(){
+     $('.start-page .btn-upload').on('click', function(){
       $('.form-upload-image input').trigger('click');
     });
 
-    $('.start-page .btn-start').on('click', function(){
+     $('.start-page .btn-start').on('click', function(){
       startpage.fadeOut();
 
-      GAME.app.startGame();
+      GAME.app.startGame(selectedFile);
     });
-  },
-  startGame: function(){
-    gameInit();
+   },
+   startGame: function(user_selectedFile){
+    gameInit(user_selectedFile);
     gameItems();
   }
-}
+};
 }();
 
 // $('.welcome-page').hide();

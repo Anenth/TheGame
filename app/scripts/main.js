@@ -212,7 +212,7 @@ GAME.app = function(){
           catcher.caught = true;
           caught_counter = 10;
           if (navigator.vibrate) {
-            navigator.vibrate(1000);
+            navigator.vibrate(50);
           }
       }
 
